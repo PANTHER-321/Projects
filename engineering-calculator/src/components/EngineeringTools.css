@@ -1,31 +1,31 @@
+/* File: src/components/EngineeringTools.css */
 .engineering-tools {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
-.engineering-tools label,
-.engineering-tools input,
-.engineering-tools select {
-  margin: 8px;
+.tool-buttons {
+  margin-bottom: 20px;
+}
+
+.tool-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
   font-size: 16px;
-}
-
-.engineering-tools input {
-  padding: 6px;
-  width: 200px;
-}
-
-.engineering-tools button {
-  margin-top: 10px;
-  padding: 8px 20px;
-  background-color: #007acc;
+  background-color: #28a745;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
-.engineering-tools button:hover {
-  background-color: #005a99;
+.tool-buttons button:hover {
+  background-color: #1c7c33;
+}
+
+.tool-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #e8f5e9;
+  border-radius: 12px;
 }

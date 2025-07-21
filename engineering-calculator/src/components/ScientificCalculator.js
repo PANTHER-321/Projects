@@ -1,4 +1,4 @@
-// File: src/ScientificCalculator.js
+// File: src/components/ScientificCalculator.js
 import React, { useState } from "react";
 import "./ScientificCalculator.css";
 
@@ -16,24 +16,30 @@ function ScientificCalculator() {
   };
 
   const handleFunction = (func) => {
+    const value = parseFloat(expression);
+    if (isNaN(value)) {
+      setResult("Enter valid number");
+      return;
+    }
+
     switch (func) {
       case "sin":
-        setResult(Math.sin(toRadians(expression)).toFixed(4));
+        setResult(Math.sin(toRadians(value)).toFixed(4));
         break;
       case "cos":
-        setResult(Math.cos(toRadians(expression)).toFixed(4));
+        setResult(Math.cos(toRadians(value)).toFixed(4));
         break;
       case "tan":
-        setResult(Math.tan(toRadians(expression)).toFixed(4));
+        setResult(Math.tan(toRadians(value)).toFixed(4));
         break;
       case "log":
-        setResult(Math.log10(expression).toFixed(4));
+        setResult(Math.log10(value).toFixed(4));
         break;
       case "ln":
-        setResult(Math.log(expression).toFixed(4));
+        setResult(Math.log(value).toFixed(4));
         break;
       case "sqrt":
-        setResult(Math.sqrt(expression).toFixed(4));
+        setResult(Math.sqrt(value).toFixed(4));
         break;
       default:
         break;
@@ -43,7 +49,7 @@ function ScientificCalculator() {
   const toRadians = (angle) => (angle * Math.PI) / 180;
 
   return (
-    <div>
+    <div className="scientific-calculator">
       <h2>Scientific Calculator</h2>
       <input
         type="text"
@@ -51,14 +57,15 @@ function ScientificCalculator() {
         value={expression}
         onChange={(e) => setExpression(e.target.value)}
       />
-      <div>
-        <button onClick={calculate}>=</button>
+      <div className="button-grid">
+        <button onClick={calculate} className="equal">=</button>
         <button onClick={() => handleFunction("sin")}>sin</button>
         <button onClick={() => handleFunction("cos")}>cos</button>
         <button onClick={() => handleFunction("tan")}>tan</button>
         <button onClick={() => handleFunction("log")}>log</button>
         <button onClick={() => handleFunction("ln")}>ln</button>
         <button onClick={() => handleFunction("sqrt")}>√</button>
+        <button onClick={() => { setExpression(""); setResult(null); }} className="clear">C</button>
       </div>
       {result !== null && <div className="result">Result: {result}</div>}
     </div>
