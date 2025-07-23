@@ -1,0 +1,89 @@
+/* General App container */
+.App {
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #e1f5fe);
+  padding: 30px;
+  min-height: 100vh;
+}
+
+/* Header */
+h1 {
+  color: #004d40;
+  margin-bottom: 20px;
+}
+
+/* Tab button section */
+.tab-buttons {
+  margin-bottom: 20px;
+}
+
+.tab-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-buttons button:hover {
+  background-color: #01579b;
+}
+
+/* Main content box */
+.content-box {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Input field for calculators */
+input[type="text"],
+input[type="number"] {
+  padding: 12px;
+  font-size: 18px;
+  width: 80%;
+  max-width: 400px;
+  margin: 15px auto;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  display: block;
+}
+
+/* Buttons inside calculators */
+.content-box button {
+  padding: 10px 15px;
+  margin: 8px;
+  font-size: 16px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.content-box button:hover {
+  background-color: #005fa3;
+}
+
+/* Result display */
+.result {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+/* Section headings */
+h2 {
+  color: #00796b;
+  margin-bottom: 20px;
+}
